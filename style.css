@@ -419,4 +419,120 @@ nav {
   filter: blur(15px) drop-shadow(0 0 3px green);
 }
 #section-3 {
+  width: 100%;
+  height: 150vh;
+}
+#section-3-top,
+#section-3-bottom {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+#section-3-top-left,
+#section-3-bottom-right {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#section-3-top-right,
+#section-3-bottom-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  gap: 2vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  position: relative;
+  padding: 0 5vw;
+  h2 {
+    color: #fff;
+    font-size: 3vw;
+  }
+  p {
+    width: 70%;
+    color: #7d7d7daf;
+    font-size: 1.1vw;
+    font-weight: 100;
+    span {
+      border: 1px solid #ffffff64;
+      color: #fff;
+      padding: 0.5vh 1vw;
+      border-radius: 10px;
+      margin-right: 1vw;
+      background: #ffffff14;
+      backdrop-filter: blur(10px);
+    }
+  }
+  ul {
+    padding-left: 1vw;
+    li {
+      color: #fff;
+      color: #7d7d7daf;
+      font-weight: 100;
+    }
+  }
+  button {
+    padding: 0.7vw 1.5vw;
+    margin-top: 3vh;
+    border-radius: 5px;
+    font-size: 1.1vw;
+    color: #fff;
+    background: linear-gradient(to right, #111, #550da3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+}
+#section-3-img {
+  width: 22vw;
+  position: absolute;
+  top: -16%;
+  left: 28%;
+  perspective: 1000px;
+  z-index: 10;
+}
+.section-3-img-bg {
+  width: 50%;
+  height: 85%;
+  background: linear-gradient(#550da3bf, #111);
+  border-radius: 13rem;
+  filter: blur(7px);
+}
+.section-3-img-top {
+  width: 50%;
+  height: 40%;
+  background: linear-gradient(transparent, #111);
+  border-radius: 0 0 13rem 13rem;
+  position: absolute;
+  bottom: 2%;
+  z-index: 11;
+}
+#section-4 {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  position: relative;
+}
+#rotate-img {
+  width: 11vw;
+  height: 11vw;
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
