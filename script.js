@@ -95,7 +95,7 @@ gsap.to("#section-3-img", {
   y: 560,
   duration: 3,
   x: 770,
-  transform: "rotateY(180deg)",
+  // transform: "rotateY(180deg)",
   scrollTrigger: {
     trigger: "#section-3",
     scroller: "#main-wrapper",
@@ -112,7 +112,72 @@ gsap.to("#rotate-img", {
     scroller: "#main-wrapper",
     start: "top 91%",
     end: "top 10%",
-    markers: true,
     scrub: 10,
   },
+});
+gsap.to("#rotate-img2", {
+  rotate: -360,
+  duration: 6,
+  scrollTrigger: {
+    trigger: "#section-4",
+    scroller: "#main-wrapper",
+    start: "top 91%",
+    end: "top 10%",
+    scrub: 10,
+  },
+});
+
+//  video animation in section fourth
+
+let playIcon = document.querySelector("#play-icon");
+let playIconMsg = document.querySelector("#play-icon-msg");
+let videoBox = document.querySelector("#video-container");
+let video = videoBox.querySelector("video");
+let isPlayed = false;
+playIcon.addEventListener("mouseover", () => {
+  gsap.to(playIconMsg, {
+    transform: "translateY(0%)",
+    opacity: 1,
+    duration: 0.2,
+  });
+});
+playIcon.addEventListener("mouseleave", () => {
+  gsap.to(playIconMsg, {
+    transform: "translateY(60%)",
+    opacity: 0,
+    duration: 0.5,
+  });
+});
+
+playIcon.addEventListener("click", () => {
+  if (!isPlayed) {
+    gsap.to(videoBox, {
+      transform: "scaleX(1) scaleY(1)",
+      opacity: 1,
+      duration: 0.5,
+    });
+    video.play();
+    isPlayed = true;
+  }
+});
+
+function closeVideo() {
+  gsap.to(videoBox, {
+    transform: "scaleX(0.7) scaleY(0)",
+    opacity: 0,
+    duration: 0.2,
+  });
+  video.pause();
+  isPlayed = false;
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && isPlayed) {
+    closeVideo();
+  }
+});
+videoBox.addEventListener("click", () => {
+  if (isPlayed) {
+    closeVideo();
+  }
 });
